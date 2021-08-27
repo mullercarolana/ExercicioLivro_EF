@@ -17,7 +17,6 @@ namespace Apresentacao
             InitializeComponent();
             PopularComboBoxCursos();
             RefreshDataGridView();
-
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -59,6 +58,14 @@ namespace Apresentacao
             RefreshDataGridView();
         }
 
+        private void LimparControles()
+        {
+            txtID.Text = string.Empty;
+            txtNome.Clear();
+            cbxCursos.SelectedIndex = 0;
+            RefreshDataGridView();
+        }
+
         private void RefreshDataGridView()
         {
             var disciplinas = from d in disciplinaServico.TodasAsDisciplinas()
@@ -84,9 +91,16 @@ namespace Apresentacao
             return Convert.ToInt32(dgvDisciplinas.Rows[rowIndex].Cells[0].Value);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BtnRemover_Click(object sender, EventArgs e)
         {
+            if (txtID.Text.Trim() == string.Empty)
+                MessageBox.Show("Selecione uma disciplina");
+            else
+            {
+                disciplinaServico.Remover(Convert.ToInt64(txtID.Text));
+            }
 
+            LimparControles();
         }
 
         private void DgvDisciplinas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -94,5 +108,9 @@ namespace Apresentacao
             PopularControles(disciplinaServico.ObterPorId(ObterIDDisciplinaSelecionada(e.RowIndex)));
         }
 
+        private void BtnNovo_Click(object sender, EventArgs e)
+        {
+            LimparControles();
+        }
     }
 }

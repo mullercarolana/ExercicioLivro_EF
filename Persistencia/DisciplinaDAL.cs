@@ -37,5 +37,15 @@ namespace Persistencia
                 return disciplina;
             }
         }
+
+        public void Remover(long disciplinaID)
+        {
+            using (var context = new EFContext())
+            {
+                var disciplina = context.Disciplinas.Single(d => d.DisciplinaID == disciplinaID);
+                context.Disciplinas.Remove(disciplina);
+                context.SaveChanges();
+            }
+        }
     }
 }

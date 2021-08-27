@@ -36,9 +36,9 @@ namespace Apresentacao
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnGravar = new System.Windows.Forms.Button();
             this.cbxCursos = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
             this.dgvDisciplinas = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisciplinas)).BeginInit();
             this.SuspendLayout();
@@ -110,15 +110,16 @@ namespace Apresentacao
             this.cbxCursos.Size = new System.Drawing.Size(504, 23);
             this.cbxCursos.TabIndex = 7;
             // 
-            // button1
+            // btnNovo
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(45, 149);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 29);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Novo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNovo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNovo.Location = new System.Drawing.Point(45, 149);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(134, 29);
+            this.btnNovo.TabIndex = 8;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
             // 
             // button2
             // 
@@ -130,16 +131,16 @@ namespace Apresentacao
             this.button2.Text = "Alterar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnRemover
             // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(472, 149);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 29);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Remover";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnRemover.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRemover.Location = new System.Drawing.Point(472, 149);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(133, 29);
+            this.btnRemover.TabIndex = 10;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.BtnRemover_Click);
             // 
             // dgvDisciplinas
             // 
@@ -157,9 +158,9 @@ namespace Apresentacao
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 529);
             this.Controls.Add(this.dgvDisciplinas);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.cbxCursos);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.txtNome);
@@ -184,9 +185,9 @@ namespace Apresentacao
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.ComboBox cbxCursos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.DataGridView dgvDisciplinas;
     }
 }
